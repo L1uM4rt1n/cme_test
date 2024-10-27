@@ -1,6 +1,6 @@
 export type AmplifyDependentResourcesAttributes = {
   "auth": {
-    "onlinebanking": {
+    "onlineBankingApp": {
       "AppClientID": "string",
       "AppClientIDWeb": "string",
       "UserPoolArn": "string",

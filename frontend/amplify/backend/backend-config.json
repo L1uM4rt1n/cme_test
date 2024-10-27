@@ -1,6 +1,6 @@
 {
   "auth": {
-    "onlinebanking": {
+    "onlineBankingApp": {
       "customAuth": false,
       "dependsOn": [],
       "frontendAuthConfig": {
@@ -14,8 +14,8 @@
         },
         "signupAttributes": [
           "EMAIL",
-          "GIVEN_NAME",
-          "NAME"
+          "FAMILY_NAME",
+          "GIVEN_NAME"
         ],
         "socialProviders": [],
         "usernameAttributes": [],

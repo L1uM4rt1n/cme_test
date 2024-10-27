@@ -1,14 +1,38 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import './App.css';
 import { Amplify } from 'aws-amplify';
 import awsExports from './aws-exports'; // Amplify config file
 import { Authenticator } from '@aws-amplify/ui-react';
 import '@aws-amplify/ui-react/styles.css';
+import { fetchAuthSession } from '@aws-amplify/auth';
 
 Amplify.configure(awsExports);
 
 function App() {
   const [balance, setBalance] = useState(null);
+  const [accessToken, setAccessToken] = useState('');
+  const [idToken, setIdToken] = useState('');
+
+  useEffect(() => {
+    // Function to retrieve the access token and ID token
+    const getTokens = async () => {
+      try {
+        // Fetch the user's session
+        var cognitoTokens = (await fetchAuthSession()).tokens;
+
+        let rawAccessToken = cognitoTokens?.accessToken?.toString();
+        console.log('rawAccessToken:', rawAccessToken);
+
+        let rawIDToken = cognitoTokens?.idToken?.toString();
+        console.log('rawIDToken:', rawIDToken);
+
+      } catch (error) {
+        console.error('Error retrieving tokens:', error);
+      }
+    };
+
+    getTokens();
+  }, []);
 
   const checkBalance = () => {
     // change it to connection to get balance api
@@ -16,7 +40,7 @@ function App() {
   };
 
   return (
-    <Authenticator>
+    <Authenticator variation="modal">
       {({ signOut, user }) => (
         <div className="container">
           <h1>Welcome to Your Digital Bank, {user.username}</h1>
@@ -35,44 +59,5 @@ function App() {
     </Authenticator>
   );
 }
-
-// function App() {
-//   const [username, setUsername] = useState("");
-//   const [balance, setBalance] = useState(null);
-  
-//   const login = () => {
-//     // cognito code changes
-//     alert(`Logged in as ${username}`);
-//   };
-
-//   const checkBalance = () => {
-//     // change it to connection to get balance api
-//     setBalance(1000);
-//   };
-
-//   return (
-//     <div className="container">
-//       <h1>Welcome to Your Digital Bank</h1>
-      
-//       <div>
-//         <label>Username: </label>
-//         <input 
-//           type="text" 
-//           value={username} 
-//           onChange={(e) => setUsername(e.target.value)} 
-//         />
-//       </div>
-      
-//       <button onClick={login}>Login</button>
-//       <button onClick={checkBalance}>Check Balance</button>
-      
-//       {balance !== null && (
-//         <div>
-//           <h2>Your Balance: ${balance}</h2>
-//         </div>
-//       )}
-//     </div>
-//   );
-// }
 
 export default App;

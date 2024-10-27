@@ -1,19 +1,19 @@
 {
   "dev": {
     "awscloudformation": {
-      "AuthRoleName": "amplify-onlinebanking-dev-c2a04-authRole",
-      "UnauthRoleArn": "arn:aws:iam::577638361635:role/amplify-onlinebanking-dev-c2a04-unauthRole",
-      "AuthRoleArn": "arn:aws:iam::577638361635:role/amplify-onlinebanking-dev-c2a04-authRole",
-      "Region": "us-east-1",
-      "DeploymentBucketName": "amplify-onlinebanking-dev-c2a04-deployment",
-      "UnauthRoleName": "amplify-onlinebanking-dev-c2a04-unauthRole",
-      "StackName": "amplify-onlinebanking-dev-c2a04",
-      "StackId": "arn:aws:cloudformation:us-east-1:577638361635:stack/amplify-onlinebanking-dev-c2a04/a8ecd590-91e0-11ef-9307-0e34c62dc21d",
-      "AmplifyAppId": "d3bptuwu7cr6qi"
+      "AuthRoleName": "amplify-onlinebankingapp-dev-744c5-authRole",
+      "UnauthRoleArn": "arn:aws:iam::577638361635:role/amplify-onlinebankingapp-dev-744c5-unauthRole",
+      "AuthRoleArn": "arn:aws:iam::577638361635:role/amplify-onlinebankingapp-dev-744c5-authRole",
+      "Region": "ap-southeast-1",
+      "DeploymentBucketName": "amplify-onlinebankingapp-dev-744c5-deployment",
+      "UnauthRoleName": "amplify-onlinebankingapp-dev-744c5-unauthRole",
+      "StackName": "amplify-onlinebankingapp-dev-744c5",
+      "StackId": "arn:aws:cloudformation:ap-southeast-1:577638361635:stack/amplify-onlinebankingapp-dev-744c5/4f70c380-941c-11ef-9c0f-0a5481924df3",
+      "AmplifyAppId": "d2pts3epl7pfhy"
     },
     "categories": {
       "auth": {
-        "onlinebanking": {}
+        "onlineBankingApp": {}
       }
     }
   }
