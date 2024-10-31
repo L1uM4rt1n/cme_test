@@ -1,19 +1,30 @@
 {
   "dev": {
     "awscloudformation": {
-      "AuthRoleName": "amplify-onlinebankingapp-dev-744c5-authRole",
-      "UnauthRoleArn": "arn:aws:iam::577638361635:role/amplify-onlinebankingapp-dev-744c5-unauthRole",
-      "AuthRoleArn": "arn:aws:iam::577638361635:role/amplify-onlinebankingapp-dev-744c5-authRole",
+      "AuthRoleName": "amplify-onlinebankingapp-dev-d2063-authRole",
+      "UnauthRoleArn": "arn:aws:iam::577638361635:role/amplify-onlinebankingapp-dev-d2063-unauthRole",
+      "AuthRoleArn": "arn:aws:iam::577638361635:role/amplify-onlinebankingapp-dev-d2063-authRole",
       "Region": "ap-southeast-1",
-      "DeploymentBucketName": "amplify-onlinebankingapp-dev-744c5-deployment",
-      "UnauthRoleName": "amplify-onlinebankingapp-dev-744c5-unauthRole",
-      "StackName": "amplify-onlinebankingapp-dev-744c5",
-      "StackId": "arn:aws:cloudformation:ap-southeast-1:577638361635:stack/amplify-onlinebankingapp-dev-744c5/4f70c380-941c-11ef-9c0f-0a5481924df3",
-      "AmplifyAppId": "d2pts3epl7pfhy"
+      "DeploymentBucketName": "amplify-onlinebankingapp-dev-d2063-deployment",
+      "UnauthRoleName": "amplify-onlinebankingapp-dev-d2063-unauthRole",
+      "StackName": "amplify-onlinebankingapp-dev-d2063",
+      "StackId": "arn:aws:cloudformation:ap-southeast-1:577638361635:stack/amplify-onlinebankingapp-dev-d2063/98583f00-9751-11ef-b392-0a69b1b0af6d",
+      "AmplifyAppId": "d3vnhhz7gtkzdv",
+      "AuthTriggerTemplateURL": "https://s3.amazonaws.com/amplify-onlinebankingapp-dev-d2063-deployment/amplify-cfn-templates/auth/auth-trigger-cloudformation-template.json"
     },
     "categories": {
       "auth": {
-        "onlineBankingApp": {}
+        "onlineBanking": {}
+      },
+      "function": {
+        "onlineBankingPostConfirmation": {
+          "deploymentBucketName": "amplify-onlinebankingapp-dev-d2063-deployment",
+          "s3Key": "amplify-builds/onlineBankingPostConfirmation-69475761367737376659-build.zip",
+          "dbHost": "digital-banking-db.czwwa26ug3b3.ap-southeast-1.rds.amazonaws.com",
+          "dbUser": "admin",
+          "dbPassword": "cme-g2t2!",
+          "dbName": "digital_banking"
+        }
       }
     }
   }

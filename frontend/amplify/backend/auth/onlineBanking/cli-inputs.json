@@ -1,7 +1,7 @@
 {
   "version": "1",
   "cognitoConfig": {
-    "resourceNameTruncated": "onlineead1b2a5",
+    "resourceNameTruncated": "onlineeeb11643",
     "userPoolName": "onlineBankingApp",
     "autoVerifiedAttributes": [
       "email"
@@ -31,15 +31,19 @@
     "userpoolClientReadAttributes": [
       "email"
     ],
-    "userpoolClientLambdaRole": "onlineead1b2a5_userpoolclient_lambda_role",
+    "userpoolClientLambdaRole": "onlineeeb11643_userpoolclient_lambda_role",
     "userpoolClientSetAttributes": false,
-    "sharedId": "ead1b2a5",
-    "resourceName": "onlineBankingApp",
+    "sharedId": "eeb11643",
+    "resourceName": "onlineBanking",
     "authSelections": "userPoolOnly",
     "useDefault": "manual",
     "userPoolGroups": false,
     "adminQueries": false,
-    "triggers": {},
+    "triggers": {
+      "PostConfirmation": [
+        "custom"
+      ]
+    },
     "hostedUI": false,
     "userPoolGroupList": [],
     "serviceName": "Cognito",

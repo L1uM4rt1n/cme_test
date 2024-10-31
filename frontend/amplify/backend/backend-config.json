@@ -1,8 +1,18 @@
 {
   "auth": {
-    "onlineBankingApp": {
+    "onlineBanking": {
       "customAuth": false,
-      "dependsOn": [],
+      "dependsOn": [
+        {
+          "attributes": [
+            "Arn",
+            "Name"
+          ],
+          "category": "function",
+          "resourceName": "onlineBankingPostConfirmation",
+          "triggerProvider": "Cognito"
+        }
+      ],
       "frontendAuthConfig": {
         "mfaConfiguration": "ON",
         "mfaTypes": [
@@ -25,6 +35,63 @@
       },
       "providerPlugin": "awscloudformation",
       "service": "Cognito"
+    }
+  },
+  "function": {
+    "onlineBankingPostConfirmation": {
+      "build": true,
+      "providerPlugin": "awscloudformation",
+      "service": "Lambda"
+    }
+  },
+  "parameters": {
+    "AMPLIFY_function_onlineBankingPostConfirmation_dbHost": {
+      "usedBy": [
+        {
+          "category": "function",
+          "resourceName": "onlineBankingPostConfirmation"
+        }
+      ]
+    },
+    "AMPLIFY_function_onlineBankingPostConfirmation_dbName": {
+      "usedBy": [
+        {
+          "category": "function",
+          "resourceName": "onlineBankingPostConfirmation"
+        }
+      ]
+    },
+    "AMPLIFY_function_onlineBankingPostConfirmation_dbPassword": {
+      "usedBy": [
+        {
+          "category": "function",
+          "resourceName": "onlineBankingPostConfirmation"
+        }
+      ]
+    },
+    "AMPLIFY_function_onlineBankingPostConfirmation_dbUser": {
+      "usedBy": [
+        {
+          "category": "function",
+          "resourceName": "onlineBankingPostConfirmation"
+        }
+      ]
+    },
+    "AMPLIFY_function_onlineBankingPostConfirmation_deploymentBucketName": {
+      "usedBy": [
+        {
+          "category": "function",
+          "resourceName": "onlineBankingPostConfirmation"
+        }
+      ]
+    },
+    "AMPLIFY_function_onlineBankingPostConfirmation_s3Key": {
+      "usedBy": [
+        {
+          "category": "function",
+          "resourceName": "onlineBankingPostConfirmation"
+        }
+      ]
     }
   }
 }
