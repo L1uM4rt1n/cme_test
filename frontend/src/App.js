@@ -17,14 +17,15 @@ function App() {
     // Function to retrieve the access token and ID token
     const getTokens = async () => {
       try {
-        // Fetch the user's session
         var cognitoTokens = (await fetchAuthSession()).tokens;
 
         let rawAccessToken = cognitoTokens?.accessToken?.toString();
         console.log('rawAccessToken:', rawAccessToken);
+        setAccessToken(rawAccessToken);
 
         let rawIDToken = cognitoTokens?.idToken?.toString();
         console.log('rawIDToken:', rawIDToken);
+        setIdToken(rawIDToken);
 
       } catch (error) {
         console.error('Error retrieving tokens:', error);
@@ -36,6 +37,8 @@ function App() {
 
   const checkBalance = () => {
     // change it to connection to get balance api
+    console.log("access token: ", accessToken)
+    console.log("id token: ", idToken)
     setBalance(1000);
   };
 
