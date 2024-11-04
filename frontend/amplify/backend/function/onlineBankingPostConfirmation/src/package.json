@@ -6,7 +6,8 @@
   "license": "Apache-2.0",
   "dependencies": {
     "axios": "latest",
-    "mysql2": "^3.11.3"
+    "mysql2": "^3.11.3",
+    "onlineBankingPostConfirmation": "file:"
   },
   "devDependencies": {
     "@types/aws-lambda": "^8.10.92"
