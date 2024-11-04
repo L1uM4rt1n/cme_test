@@ -76,42 +76,6 @@ import Header from './components/Header';
 Amplify.configure(awsExports);
 
 function App() {
-<<<<<<< Updated upstream
-  const [balance, setBalance] = useState(null);
-  const [accessToken, setAccessToken] = useState('');
-  const [idToken, setIdToken] = useState('');
-
-  useEffect(() => {
-    // Function to retrieve the access token and ID token
-    const getTokens = async () => {
-      try {
-        var cognitoTokens = (await fetchAuthSession()).tokens;
-
-        let rawAccessToken = cognitoTokens?.accessToken?.toString();
-        console.log('rawAccessToken:', rawAccessToken);
-        setAccessToken(rawAccessToken);
-
-        let rawIDToken = cognitoTokens?.idToken?.toString();
-        console.log('rawIDToken:', rawIDToken);
-        setIdToken(rawIDToken);
-
-      } catch (error) {
-        console.error('Error retrieving tokens:', error);
-      }
-    };
-
-    getTokens();
-  }, []);
-
-  const checkBalance = () => {
-    // change it to connection to get balance api
-    console.log("access token: ", accessToken)
-    console.log("id token: ", idToken)
-    setBalance(1000);
-  };
-
-=======
->>>>>>> Stashed changes
   return (
     <Authenticator variation="modal">
       {({ signOut, user }) => (
