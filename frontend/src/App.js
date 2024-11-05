@@ -1,68 +1,3 @@
-// import React, { useState, useEffect } from 'react';
-// import './App.css';
-// import { Amplify } from 'aws-amplify';
-// import awsExports from './aws-exports'; // Amplify config file
-// import { Authenticator } from '@aws-amplify/ui-react';
-// import '@aws-amplify/ui-react/styles.css';
-// import { fetchAuthSession } from '@aws-amplify/auth';
-
-// Amplify.configure(awsExports);
-
-// function App() {
-//   const [balance, setBalance] = useState(null);
-//   const [accessToken, setAccessToken] = useState('');
-//   const [idToken, setIdToken] = useState('');
-
-//   useEffect(() => {
-//     // Function to retrieve the access token and ID token
-//     const getTokens = async () => {
-//       try {
-//         // Fetch the user's session
-//         var cognitoTokens = (await fetchAuthSession()).tokens;
-
-//         let rawAccessToken = cognitoTokens?.accessToken?.toString();
-//         console.log('rawAccessToken:', rawAccessToken);
-
-//         let rawIDToken = cognitoTokens?.idToken?.toString();
-//         console.log('rawIDToken:', rawIDToken);
-
-//       } catch (error) {
-//         console.error('Error retrieving tokens:', error);
-//       }
-//     };
-
-//     getTokens();
-//   }, []);
-
-//   const checkBalance = () => {
-//     // change it to connection to get balance api
-//     setBalance(1000);
-//   };
-
-//   return (
-//     <Authenticator variation="modal">
-//       {({ signOut, user }) => (
-//         <div className="container">
-//           <h1>Welcome to Your Digital Bank, {user.username}</h1>
-
-//           <button onClick={checkBalance}>Check Balance</button>
-
-//           {balance !== null && (
-//             <div>
-//               <h2>Your Balance: ${balance}</h2>
-//             </div>
-//           )}
-
-//           <button onClick={signOut}>Sign Out</button>
-//         </div>
-//       )}
-//     </Authenticator>
-//   );
-// }
-
-// export default App;
-
-// src/App.js
 import React from 'react';
 import './App.css';
 import { Amplify } from 'aws-amplify';
@@ -74,6 +9,31 @@ import Balance from './components/Balance';
 import Header from './components/Header';
 import Transaction from './components/Transaction';
 import { Route, Routes, Link } from 'react-router-dom';
+import { AwsRum } from 'aws-rum-web';
+
+try {
+  const config = {
+    sessionSampleRate: 1,
+    identityPoolId: "ap-southeast-1:2a7c4946-e48e-4f71-8bfe-1db3134aab3b",
+    endpoint: "https://dataplane.rum.ap-southeast-1.amazonaws.com",
+    telemetries: ["performance","errors","http"],
+    allowCookies: true,
+    enableXRay: false
+  };
+
+  const APPLICATION_ID = 'cff47b7d-83b3-48d5-83ee-abdad187f43b';
+  const APPLICATION_VERSION = '1.0.0';
+  const APPLICATION_REGION = 'ap-southeast-1';
+
+  const awsRum = new AwsRum(
+    APPLICATION_ID,
+    APPLICATION_VERSION,
+    APPLICATION_REGION,
+    config
+  );
+} catch (error) {
+  // Ignore errors thrown during CloudWatch RUM web client initialization
+}
 
 Amplify.configure(awsExports);
 
