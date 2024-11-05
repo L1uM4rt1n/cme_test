@@ -11,7 +11,7 @@ const Balance = () => {
   const checkBalance = async () => {
     try {
       const response = await fetch(
-        `https://d31tnhiq7k.execute-api.ap-southeast-1.amazonaws.com/test_1/?user_id=${idToken["payload"]["sub"]}`,
+        `https://d31tnhiq7k.execute-api.ap-southeast-1.amazonaws.com/test_1?user_id=${idToken["payload"]["sub"]}`,
         {
           method: 'GET',
           headers: {
@@ -23,7 +23,7 @@ const Balance = () => {
 
       if (response.ok) {
         const data = await response.json();
-        setBalance(data.balance);
+        setBalance(data.balance.toFixed(2));
       } else {
         console.error('Error fetching balance:', response.statusText);
       }
