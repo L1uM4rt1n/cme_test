@@ -72,6 +72,8 @@ import '@aws-amplify/ui-react/styles.css';
 import { TokensProvider } from './components/TokensProvider';
 import Balance from './components/Balance';
 import Header from './components/Header';
+import Transaction from './components/Transaction';
+import { Route, Routes, Link } from 'react-router-dom';
 
 Amplify.configure(awsExports);
 
@@ -82,11 +84,25 @@ function App() {
         <TokensProvider>
           <div className="container">
             <Header username={user.username} onSignOut={signOut} />
-            <Balance />
+            <Routes>
+              <Route path="/" element={<MainPage />} />
+              <Route path="/transaction" element={<Transaction />} />
+            </Routes>
           </div>
         </TokensProvider>
       )}
     </Authenticator>
+  );
+}
+
+const MainPage = () => {
+  return (
+    <div>
+      <Balance />
+      <Link to="/transaction">
+        <button>Transaction</button>
+      </Link>
+    </div>
   );
 }
 
