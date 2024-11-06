@@ -8,6 +8,7 @@ import { TokensProvider } from './components/TokensProvider';
 import Balance from './components/Balance';
 import Header from './components/Header';
 import Transaction from './components/Transaction';
+import ErrorSimulator from './components/ErrorSimulator'; // Import the new component
 import { Route, Routes, Link } from 'react-router-dom';
 import { AwsRum } from 'aws-rum-web';
 
@@ -62,11 +63,12 @@ const MainPage = () => {
   return (
     <div>
       <Balance />
+      <ErrorSimulator /> {/* Add the error simulator component here */}
       <Link to="/transaction">
         <button>Transaction</button>
       </Link>
     </div>
   );
-}
+};
 
 export default App;
