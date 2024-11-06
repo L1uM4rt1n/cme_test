@@ -32,6 +32,7 @@ if (process.env.NODE_ENV === "production") {
       APPLICATION_REGION,
       config
     );
+    console.log("AWS RUM initialized successfully"); // Log this message for confirmation
   } catch (error) {
     console.error("CloudWatch RUM initialization error:", error);
   }
