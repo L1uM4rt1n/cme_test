@@ -11,28 +11,30 @@ import Transaction from './components/Transaction';
 import { Route, Routes, Link } from 'react-router-dom';
 import { AwsRum } from 'aws-rum-web';
 
-try {
-  const config = {
-    sessionSampleRate: 1,
-    identityPoolId: "ap-southeast-1:2a7c4946-e48e-4f71-8bfe-1db3134aab3b",
-    endpoint: "https://dataplane.rum.ap-southeast-1.amazonaws.com",
-    telemetries: ["performance","errors","http"],
-    allowCookies: true,
-    enableXRay: false
-  };
+if (process.env.NODE_ENV === "production") {
+  try {
+    const config = {
+      sessionSampleRate: 1,
+      identityPoolId: "ap-southeast-1:2a7c4946-e48e-4f71-8bfe-1db3134aab3b",
+      endpoint: "https://dataplane.rum.ap-southeast-1.amazonaws.com",
+      telemetries: ["performance", "errors", "http"],
+      allowCookies: true,
+      enableXRay: false,
+    };
 
-  const APPLICATION_ID = 'cff47b7d-83b3-48d5-83ee-abdad187f43b';
-  const APPLICATION_VERSION = '1.0.0';
-  const APPLICATION_REGION = 'ap-southeast-1';
+    const APPLICATION_ID = 'cff47b7d-83b3-48d5-83ee-abdad187f43b';
+    const APPLICATION_VERSION = '1.0.0';
+    const APPLICATION_REGION = 'ap-southeast-1';
 
-  const awsRum = new AwsRum(
-    APPLICATION_ID,
-    APPLICATION_VERSION,
-    APPLICATION_REGION,
-    config
-  );
-} catch (error) {
-  // Ignore errors thrown during CloudWatch RUM web client initialization
+    const awsRum = new AwsRum(
+      APPLICATION_ID,
+      APPLICATION_VERSION,
+      APPLICATION_REGION,
+      config
+    );
+  } catch (error) {
+    console.error("CloudWatch RUM initialization error:", error);
+  }
 }
 
 Amplify.configure(awsExports);
