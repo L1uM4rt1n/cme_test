@@ -39,7 +39,7 @@ const Transaction = () => {
     <div>
       <h2>Transaction Page</h2>
       <form onSubmit={handleTransaction}>
-        <label>Recipient's User Id:</label>
+        <label>Recipient's Username:</label>
         <input
           type="text"
           value={username}
