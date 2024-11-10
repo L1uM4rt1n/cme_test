@@ -15,12 +15,8 @@
     "categories": {
       "function": {
         "onlineBankingPostConfirmation": {
-          "dbHost": "digital-banking-db.czwwa26ug3b3.ap-southeast-1.rds.amazonaws.com",
-          "dbName": "digital_banking",
-          "dbPassword": "cme-g2t2!",
-          "dbUser": "admin",
           "deploymentBucketName": "amplify-onlinebankingapp-dev-d2063-deployment",
-          "s3Key": "amplify-builds/onlineBankingPostConfirmation-69475761367737376659-build.zip"
+          "s3Key": "amplify-builds/onlineBankingPostConfirmation-344651487a5273465a62-build.zip"
         }
       },
       "auth": {

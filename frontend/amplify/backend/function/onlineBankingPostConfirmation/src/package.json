@@ -5,6 +5,7 @@
   "main": "index.js",
   "license": "Apache-2.0",
   "dependencies": {
+    "aws-sdk": "^2.1691.0",
     "axios": "latest",
     "mysql2": "^3.11.3",
     "onlineBankingPostConfirmation": "file:"

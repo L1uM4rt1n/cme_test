@@ -19,7 +19,12 @@
           "TOTP"
         ],
         "passwordProtectionSettings": {
-          "passwordPolicyCharacters": [],
+          "passwordPolicyCharacters": [
+            "REQUIRES_LOWERCASE",
+            "REQUIRES_UPPERCASE",
+            "REQUIRES_NUMBERS",
+            "REQUIRES_SYMBOLS"
+          ],
           "passwordPolicyMinLength": 8
         },
         "signupAttributes": [
@@ -45,38 +50,6 @@
     }
   },
   "parameters": {
-    "AMPLIFY_function_onlineBankingPostConfirmation_dbHost": {
-      "usedBy": [
-        {
-          "category": "function",
-          "resourceName": "onlineBankingPostConfirmation"
-        }
-      ]
-    },
-    "AMPLIFY_function_onlineBankingPostConfirmation_dbName": {
-      "usedBy": [
-        {
-          "category": "function",
-          "resourceName": "onlineBankingPostConfirmation"
-        }
-      ]
-    },
-    "AMPLIFY_function_onlineBankingPostConfirmation_dbPassword": {
-      "usedBy": [
-        {
-          "category": "function",
-          "resourceName": "onlineBankingPostConfirmation"
-        }
-      ]
-    },
-    "AMPLIFY_function_onlineBankingPostConfirmation_dbUser": {
-      "usedBy": [
-        {
-          "category": "function",
-          "resourceName": "onlineBankingPostConfirmation"
-        }
-      ]
-    },
     "AMPLIFY_function_onlineBankingPostConfirmation_deploymentBucketName": {
       "usedBy": [
         {
