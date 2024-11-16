@@ -43,18 +43,6 @@
     },
     "s3Key": {
       "Type": "String"
-    },
-    "dbHost": {
-      "Type": "String"
-    },
-    "dbUser": {
-      "Type": "String"
-    },
-    "dbPassword": {
-      "Type": "String"
-    },
-    "dbName": {
-      "Type": "String"
     }
   },
   "Conditions": {
@@ -107,18 +95,6 @@
             },
             "GROUP": {
               "Ref": "GROUP"
-            },
-            "DB_HOST": {
-              "Ref": "dbHost"
-            },
-            "DB_USER": {
-              "Ref": "dbUser"
-            },
-            "DB_PASSWORD": {
-              "Ref": "dbPassword"
-            },
-            "DB_NAME": {
-              "Ref": "dbName"
             }
           }
         },
@@ -134,9 +110,9 @@
             "sg-0727da9cab49a6188"
           ],
           "SubnetIds": [
-            "subnet-0280acc9350b84bd5",
-            "subnet-03f581ced01c16c7f",
-            "subnet-0aea51a0f25d67b1d"
+            "subnet-07cec6032d7aaf7ba",
+            "subnet-0345f86d0fe13ef39",
+            "subnet-0235cbaa47f1d319f"
           ]
         },
         "Timeout": 25,
